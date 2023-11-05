@@ -254,25 +254,25 @@
 //--------------------------------------------------
 console.clear();
 
-const human = {
-    name: 'Alex',
-    age: 45
+function Human (name, age) {
+    this.name = name;
+    this.age = age;
 }
 
-const player = Object.create(human, {
-    sportName: {
-        value: 'footbal',
-        enumerable: true
-    },
-    inMainTeam: {
-        value: false,
-        enumerable: true
-    }
-});
+Human.prototype.sayHi = function(){
+    return `hi! my name is ${this.name}`
+}
 
-// player.sportName = 'footbal';
-// player.inMainTeam = false;
+function Player(name, age, sportName, inMainTeam){
+    Human.call(this, name, age);
 
-console.log(player);
-console.log(player.name);
-console.log(player.age);
+    this.sportName = sportName;
+    this.inMainTeam = inMainTeam;
+}
+
+Object.setPrototypeOf(Player.prototype, Human.prototype);
+
+const player1 = new Player('Alex', 25, 'football', true);
+
+console.log(player1);
+console.log(player1.sayHi());
