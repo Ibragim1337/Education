@@ -259,10 +259,19 @@ const human = {
     age: 45
 }
 
-const player = Object.create(human);
+const player = Object.create(human, {
+    sportName: {
+        value: 'footbal',
+        enumerable: true
+    },
+    inMainTeam: {
+        value: false,
+        enumerable: true
+    }
+});
 
-player.sportName = 'footbal';
-player.inMainTeam = false;
+// player.sportName = 'footbal';
+// player.inMainTeam = false;
 
 console.log(player);
 console.log(player.name);
