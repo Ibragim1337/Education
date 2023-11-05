@@ -118,54 +118,54 @@
 // car.petrolType = 95;
 // console.log(car.petrolType);
 
-console.clear();
+// console.clear();
 
-class Car {
-    #model;
-    #petrolType;
-    constructor(model, petrolType) {
-        this.#model = model;
-        this.#petrolType = petrolType;
-    }
+// class Car {
+//     #model;
+//     #petrolType;
+//     constructor(model, petrolType) {
+//         this.#model = model;
+//         this.#petrolType = petrolType;
+//     }
 
-    getModel(){
-        return this.model;
-    }
+//     getModel(){
+//         return this.model;
+//     }
 
-    get petrolType(){ // getter
-        return this.#petrolType
-    }
+//     get petrolType(){ // getter
+//         return this.#petrolType
+//     }
 
-    set petrolType(newPetrolType){ //setter
-        switch (newPetrolType){
-            case 92:
-            case 95: {
-                this.#petrolType = newPetrolType;
-            }
-        }
-    }
+//     set petrolType(newPetrolType){ //setter
+//         switch (newPetrolType){
+//             case 92:
+//             case 95: {
+//                 this.#petrolType = newPetrolType;
+//             }
+//         }
+//     }
     
-    beep(){
-        return `Beep of ${this.#model}`;
-    }
-}
+//     beep(){
+//         return `Beep of ${this.#model}`;
+//     }
+// }
 
 
 
-class Audi {
-    #car;
-    constructor(petrolType){
-    this.#car = new Car('audi', petrolType);
-    }
+// class Audi {
+//     #car;
+//     constructor(petrolType){
+//     this.#car = new Car('audi', petrolType);
+//     }
 
-    beep(){
-        return this.#car.beep();
-    }
-}
+//     beep(){
+//         return this.#car.beep();
+//     }
+// }
 
-const car = new Car('audi', 92);
+// const car = new Car('audi', 92);
 
-console.log(car.beep());
+// console.log(car.beep());
 
 
 
@@ -209,3 +209,61 @@ console.log(car.beep());
 //     }
 // }
 
+//-------------------------lesson-----------------------------
+
+
+// function Rect(width, height) {
+//     this.width = width;
+//     this.height = height;
+
+//     this.square = function() {
+//         return this.width * this.height
+//     }
+// }
+
+// Rect.prototype.perimeter = function (){
+//     return (this.width + this.height) * 2;
+// }
+
+// Rect.prototype.diagonal = function() {
+//     return (this.width ** 2 + this.height ** 2) * 0.5;
+// }
+
+
+// class Rect1 {
+//     constructor(width, height) {
+//         this.width = width;
+//         this.height = height;
+
+//         this.square = function() {
+//             return this.width * this.height
+//         }
+//     } 
+
+//     perimeter(){
+//         return (this.width + this.height) * 2;
+//     }
+
+//     diagonal(){
+//         return (this.width ** 2 + this.height ** 2) * 0.5;
+//     }
+// }
+
+
+
+//--------------------------------------------------
+console.clear();
+
+const human = {
+    name: 'Alex',
+    age: 45
+}
+
+const player = Object.create(human);
+
+player.sportName = 'footbal';
+player.inMainTeam = false;
+
+console.log(player);
+console.log(player.name);
+console.log(player.age);
