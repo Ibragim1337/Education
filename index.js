@@ -252,27 +252,139 @@
 
 
 //--------------------------------------------------
+
+
+// function Human (name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// Human.prototype.sayHi = function(){
+//     return `hi! my name is ${this.name}`
+// }
+
+// function Player(name, age, sportName, inMainTeam){
+//     Human.call(this, name, age);
+
+//     this.sportName = sportName;
+//     this.inMainTeam = inMainTeam;
+// }
+
+// Object.setPrototypeOf(Player.prototype, Human.prototype);
+
+// const player1 = new Player('Alex', 25, 'football', true);
+
+// console.log(player1);
+// console.log(player1.sayHi());
+
+//-----------------------------------------------------------
+
+// console.clear();
+
+
+// let arr = [1, 3, 5];
+
+// const searchInsert = function(nums, target) {
+//     for (let i = 0; i < nums.length; ++i){
+//         if (nums[i] === target){
+//             return i;
+//         }
+//     }
+
+//     if (target > nums[nums.length - 1]){
+//         nums.push(target);
+//         return nums.length - 1;
+//     }
+//     if (nums.includes(target) === false){
+//         for (let j = 0; j < nums.length; ++j){
+//             if (target > nums[j] && target < nums[j + 1]){
+//                 nums.splice(j, 0, target);
+
+//                 return j;
+//             }
+//         }
+//     }
+// };
+
+
+// const searchInsert = function(nums, target) {
+//     for (let i = 0; i < nums.length; ++i){
+//         if (nums[i] === target){
+//             return i;
+//         }
+//     }
+
+//     if (target > nums[nums.length - 1]){
+//         return nums.length;
+//     }
+
+//     if (target < nums[0]){
+//         return 0;
+//     }
+
+//     for (let j = 0; j < nums.length; ++j){
+//         if (target > nums[j] && target < nums[j + 1]){
+//             return j + 1;
+//         }
+//     }
+// };
+
+
+// console.log(searchInsert(arr, 2));
+
+//------------------------------------------------------------------------------------------------------------
+
+// const input = document.querySelector('input');
+
+// input.addEventListener('input', function() {
+//     const regexp = /[a-zA-Z]{7,}/;
+
+//     console.log(regexp.test(input.value));
+// });
+
+//-----------------------------------------------------------------------------------------------------------
+
 console.clear();
 
-function Human (name, age) {
-    this.name = name;
-    this.age = age;
+const variables = [5, 'qweqwe', true,
+[12, 'qweqwe,', false,{
+    number:14,
+    string: 'qwer',
+    boolean: false
+}],
+{
+    number: 5,
+    string: 'asdasd',
+    boolean: true,
+    arr:[12, 'asdda', false, null, undefined],
+    null: null,
+    undefined: undefined
+}, 
+null,
+undefined];
+
+
+for(const variable of variables) {
+    const asJSON = JSON.stringify(variable);
+
+    console.log(asJSON);
+
+    if(variable === undefined){continue};
+
+    const fromJSON = JSON.parse(asJSON);
+
+    console.log(fromJSON);
 }
 
-Human.prototype.sayHi = function(){
-    return `hi! my name is ${this.name}`
-}
 
-function Player(name, age, sportName, inMainTeam){
-    Human.call(this, name, age);
 
-    this.sportName = sportName;
-    this.inMainTeam = inMainTeam;
-}
 
-Object.setPrototypeOf(Player.prototype, Human.prototype);
 
-const player1 = new Player('Alex', 25, 'football', true);
 
-console.log(player1);
-console.log(player1.sayHi());
+
+
+
+
+
+
+

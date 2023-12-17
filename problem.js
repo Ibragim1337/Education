@@ -64,40 +64,53 @@ console.clear();
 //     }
 // }
 
-function Rect(width, height) {
-    const _width = width;
-    const _height = height;
+// function Rect(width, height) {
+//     const _width = width;
+//     const _height = height;
 
-    Object.defineProperty(this, "width", {
-        get() {
-            return _width;
-        }
-    });
+//     Object.defineProperty(this, "width", {
+//         get() {
+//             return _width;
+//         }
+//     });
 
-    Object.defineProperty(this, "height", {
-        get() {
-            return _height;
-        }
-    });
-}
+//     Object.defineProperty(this, "height", {
+//         get() {
+//             return _height;
+//         }
+//     });
+// }
 
-Rect.prototype.area = function () {
-    return this.width * this.height;
-}
+// Rect.prototype.area = function () {
+//     return this.width * this.height;
+// }
 
-function Square(side){
-    Rect.call(this, side, side);
-}
+// function Square(side){
+//     Rect.call(this, side, side);
+// }
 
-Object.setPrototypeOf(Square.prototype, Rect.prototype);
+// Object.setPrototypeOf(Square.prototype, Rect.prototype);
 
-Square.prototype.perimeter = function (){
-    return (this.width + this.height) * 2;
-}
+// Square.prototype.perimeter = function (){
+//     return (this.width + this.height) * 2;
+// }
 
-const square1 = new Rect(12, 10);
+// const square1 = new Rect(12, 10);
 
-const square2 = new Square(3, 4);
+// const square2 = new Square(3, 4);
 
-console.log(square2.area());
-console.log(square2.perimeter());
+// console.log(square2.area());
+// console.log(square2.perimeter());
+
+
+//------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
